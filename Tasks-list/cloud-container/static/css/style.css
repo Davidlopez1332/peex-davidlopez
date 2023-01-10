@@ -1,0 +1,119 @@
+@font-face {
+    font-family: rick;
+    src: url(/static/css/fonts/rick.ttf);
+}
+
+*{
+    margin: 0 0;
+    padding: 0 0;
+}
+body{
+    font-family: arial,sans-seriff;
+    line-height: 25px;
+    background-image: url("/static/css/bkgnd.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+    padding: 1% 1%;
+}
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.header{
+    background-color: black;
+    color: white;
+    clear: both;
+    position: center;
+    height: 90px;
+    margin-top: -1px;
+}
+
+.main{
+    margin: 1% 0;
+}
+.main h3{
+    color: rgb(131, 131, 169);
+}
+.houses{
+    width: 22.5%;
+    border: 1px solid grey;
+    margin: 1%;
+    float: left;
+    text-align: center;
+
+}
+
+.houses img{
+    width: 100%;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    clear: both;
+    position: relative;
+    height: 100px;
+    margin-top: -1px;
+}
+.footer p{
+    text-align: center;
+}
+.footer p a{
+    color: darkblue;
+}
+.footer p a:hover{
+    text-decoration: none;
+}
+
+* {
+    font-family: fantasy;
+  }
+  
+  .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .content-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+  }
+  
+  .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
+  

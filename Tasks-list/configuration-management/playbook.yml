@@ -1,0 +1,64 @@
+- name: vm-nebo-liniux
+  hosts: vm-nebo-linux
+  become: true
+
+  tasks:
+  - name: Updating all packages
+    yum:
+      name: '*'
+      state: latest
+      update_only: yes
+
+  - name: Updating all packages
+    yum:
+      name: "{{ packages }}"
+      state: "latest"
+      update_cache: yes
+    vars:
+      packages:
+      - python-pip
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+      - amazon-linux-extras
+  
+  - name: Adding extras repository
+    shell: yum-config-manager --enable extras
+
+  - name: Installing
+    shell: "amazon-linux-extras install docker=18.06.1 -y"
+
+  - name: Installing docker SDK for python
+    pip:
+      name: "{{ packages }}"
+    vars:
+      packages:
+      - docker-py
+
+
+  - name: Enable Docker CE service startup
+    service:
+      name: docker
+      state: started
+      enabled: yes
+
+  - name: Creating app directory
+    file:
+      path: /home/ec2-user/app
+      state: directory
+
+
+  - name: pulling image from dockerhub
+    docker_image:
+      name: davidlopez1332/rickl
+      source: pull
+
+  - name: launching docker container
+    docker_container:
+      name: app
+      image: davidlopez1332/rickl
+      state: started
+      detach: true
+      interactive: true
+      ports: 
+          - "80:9000"

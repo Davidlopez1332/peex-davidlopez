@@ -1,0 +1,98 @@
+pipeline {
+
+  agent any
+  environment {
+    imagename = "davidlopez1332/rickl"
+    registryCredential = 'dockerhub_id'
+    dockerImage = ''
+    AWS_ACCESS_KEY_ID=credentials('nebo_aws')
+    AWS_SECRET_ACCESS_KEY=credentials('nebo_aws')
+  }
+  tools {
+        terraform 'terraform'
+        }
+  stages {
+           stage("build") {
+            
+            steps {
+                // Builds the image with the codfe found in Github
+                script{
+                    dockerImage = docker.build imagename
+                }
+            }
+        }
+
+           stage("push to registry") {
+
+            steps {
+                // Pushes the built image
+                script{
+                    docker.withRegistry('', registryCredential ){
+                    dockerImage.push('latest')
+                    }
+
+                }
+                
+            }
+        }
+
+        stage('Terraform Init'){
+            steps{
+
+                sh "cd terraform"
+                
+            }
+            steps{
+
+                sh "terraform init -reconfigure"
+
+            }
+        }
+        stage('Terraform plan'){
+            steps{
+                
+                sh "cd terraform"
+                
+            }
+            steps{
+
+                sh "terraform plan"
+
+            }
+        }
+        stage('step'){
+            // Since the Jenkins job is build based on parameters
+            //"Step" is for either "apply" or "destroy"
+            steps{
+                
+                sh '''
+                cd terraform
+                terraform ${step} --auto-approve
+                '''
+            }
+        
+        }
+        
+        stage("Ansible") {
+
+            steps {
+                //After the intance is created Ansible installs Docker and runs the image
+                dir('ansible') {
+                    ansiblePlaybook(
+                        credentialsId: 'aws_ec2_key.pem',
+                        disableHostKeyChecking: true, 
+                        installation: 'ansible', 
+                        inventory: 'hosts.inv',
+                        playbook: 'playbook.yml',
+                    )
+                }
+            }
+        }
+            
+
+
+
+        }
+
+
+  }
