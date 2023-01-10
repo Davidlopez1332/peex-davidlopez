@@ -21,5 +21,6 @@
 - - Find thrid the task [here](https://github.com/Davidlopez1332/Tasks-list/tree/master/cloud-network/third-task)
 - [Cloud observability task explanation](https://confluence.softserveinc.com/pages/viewpage.action?spaceKey=SDO&title=AWS%3A+Configure+monitoring+and+logging+of+basic+components)
 - - Find the task [here](https://github.com/Davidlopez1332/Tasks-list/tree/master/cloud-observability)
-
+- [Cloud storage task explanation](https://peex.softserveinc.com/my-cabinet/nebo/my-skill-up-requests/competencies-to-improve/f1c68427-1e1e-465f-be84-370372e6ecea)
+- - Find the task [here](https://github.com/Davidlopez1332/Tasks-list/tree/master/cloud-observability)
 
