@@ -14,4 +14,4 @@ SSH in to the instance and execute following commands to mount EFS files:
 - $ touch test-file.txt 
 - $ ls -l
 
-further instructions at: https://docs.aws.amazon.com/efs/latest/ug/wt1-test.html
+Further instructions at: https://docs.aws.amazon.com/efs/latest/ug/wt1-test.html
