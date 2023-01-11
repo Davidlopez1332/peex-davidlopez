@@ -3,7 +3,7 @@
 ### Here you will find the links of the instructions for each task
 
 - [Programming and Scripting task explanation](https://peex.softserveinc.com/my-cabinet/nebo/my-skill-up-requests/competencies-to-improve/f1c68427-1e1e-465f-be84-370372e6ecea)
-- - Find the task [here](https://github.com/Davidlopez1332/Tasks-list/tree/master/Programming%20and%20Scripting)
+- - Find the task [here](https://github.com/Davidlopez1332/peex-davidlopez/blob/master/Tasks-list/Programming%20and%20Scripting/scripting.py)
 - [Cloud compute peex task explanation](https://peex.softserveinc.com/my-cabinet/nebo/my-skill-up-requests/competencies-to-improve/f1c68427-1e1e-465f-be84-370372e6ecea)
 - - [Cloud compute Confluence task explanation](https://confluence.softserveinc.com/pages/viewpage.action?spaceKey=SDO&title=AWS%3A+Provision+virtual+machine+with+predefined+types+and+images)
 - -  Find the task [here](https://github.com/Davidlopez1332/Tasks-list/tree/master/cloud-compute)
