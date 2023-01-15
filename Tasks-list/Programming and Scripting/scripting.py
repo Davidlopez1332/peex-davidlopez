@@ -1,5 +1,6 @@
 import os
 import boto3
+import requests
 
 os.environ['AWS_DEFAULT_REGION'] = 'us-west-2'
 os.environ['AWS_PROFILE'] = 'default'
@@ -11,8 +12,7 @@ response = requests.get("https://api.themoviedb.org/3/authentication/token/new?a
 
 
 new_string_parameter = ssm_client.put_parameter(
-    Name='API Token'
-    Description='API token automatically saved',
+    Name='API Token',
     Value=response.json().get("request_token"),
     Type='SecureString',
     Overwrite=True,
