@@ -6,7 +6,7 @@ resource "aws_security_group" "nebo_sgp" {
     from_port   = 3389
     to_port     = 3389
     protocol    = "tcp"
-    cidr_blocks = ["56.209.118.76", "255.211.77.100"]
+    cidr_blocks = ["10.239.132.89"]
   }
 
   egress {
